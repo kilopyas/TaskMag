@@ -1,0 +1,26 @@
+<?php $posts = $block->getPostCollection(); ?>
+<a href="<?php echo $block->getAddUrl(); ?>">
+    <button>Add Post</button>
+</a>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Url-Key</th>
+    <th>Content</th>
+    <th>Tags</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <?php foreach($posts as $post){?>
+        <tr>
+            <td><?php echo $post->getPostId() ?></td>
+            <td><?php echo $post->getName() ?></td>
+            <td><?php echo $post->getUrlKey() ?></td>
+            <td><?php echo $post->getPostContent() ?></td>
+            <td><?php echo $post->getTags() ?></td>
+            <td><a href="<?php echo $block->getEditUrl(); ?>"> Edit</a> | <a href="#">Delete</a></td>
+        </tr>
+    <?php }?>
+  </tbody>
+</table>
