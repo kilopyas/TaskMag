@@ -1,0 +1,61 @@
+<?php $posts = $block->getPostCollection(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <a href="<?php echo $block->getAddBlogUrl(); ?>">
+        <div class="buttons">
+            <button class="button is-primary">Add Blog +</button>
+        </div>
+    </a>
+    <br>
+    <?php foreach($posts as $post){?>
+        <a href="<?php echo $block->getShowUrl()."id/".$post->getPostId(); ?>">
+            <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                <img src="<?php echo $block->getBaseUrl()."pub/media/".$post->getFeaturedImage() ?>">
+                </p>
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                <p>
+                    <strong><?php echo $post->getName(); ?></strong>
+                    <br>
+                    <?php echo $post->getPostContent(); ?>
+                </p>
+                </div>
+                <nav class="level is-mobile">
+                <div class="level-left">
+                    <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                    </a>
+                    <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                    </a>
+                    <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                    </a>
+                </div>
+                </nav>
+            </div>
+            <div class="media-right">
+                <a href="<?php echo $block->getBlogDeleteUrl()."id/".$post->getPostId(); ?>">
+                    <button class="delete"></button>
+                </a>
+            </div>
+            </article>
+        </a>
+    <? }?>
+</body>
+</html>

@@ -9,6 +9,7 @@
     <th>Url-Key</th>
     <th>Content</th>
     <th>Tags</th>
+    <th>Image</th>
     <th>Actions</th>
   </thead>
   <tbody>
@@ -19,7 +20,8 @@
             <td><?php echo $post->getUrlKey() ?></td>
             <td><?php echo $post->getPostContent() ?></td>
             <td><?php echo $post->getTags() ?></td>
-            <td><a href="<?php echo $block->getEditUrl(); ?>"> Edit</a> | <a href="#">Delete</a></td>
+            <td><img src="<?php echo $block->getBaseUrl()."pub/media/".$post->getFeaturedImage() ?>" style="height:50px;"></td>
+            <td><a href="<?php echo $block->getEditUrl()."id/".$post->getPostId(); ?>"> Edit</a> | <a href="<?php echo $block->getDeleteUrl()."id/".$post->getPostId(); ?>">Delete</a></td>
         </tr>
     <?php }?>
   </tbody>

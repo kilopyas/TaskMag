@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="TaskVendor\TaskModule\Block\Post" name="post.blog" template="TaskVendor_TaskModule::redirect.phtml" cacheable="false" />
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="TaskVendor\TaskModule\Block\Post" name="post.default" template="TaskVendor_TaskModule::footer.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

@@ -1,5 +1,5 @@
 <?php
-namespace TaskVendor\TaskModule\Controller\Post;
+namespace TaskVendor\TaskModule\Controller\Blog;
 
 use Magento\Framework\Filesystem;
 use Magento\Framework\Image\AdapterFactory;
@@ -70,7 +70,7 @@ class Save extends \Magento\Framework\App\Action\Action
         
         // return _redirect('post/post/index');
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('post/post/index');
+        $resultRedirect->setPath('post/blog/index');
         return $resultRedirect;
 	}
 }

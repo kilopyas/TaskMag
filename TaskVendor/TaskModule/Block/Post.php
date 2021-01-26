@@ -21,19 +21,48 @@ class Post extends \Magento\Framework\View\Element\Template
     }
 
 	public function getPostCollection(){
-		$post = $this->_postFactory->create();
+        $post = $this->_postFactory->create();
 		return $post->getCollection();
+    }
+
+    public function getPost($id){
+        $post = $this->_postFactory->create()->load($id);
+		return $post;
     }
 
     public function redirectSave(){
         return $this->getUrl('post/post/save');
     }
 
+    public function redirectBlogSave(){
+        return $this->getUrl('post/blog/save');
+    }
+
+    public function getShowUrl(){
+        return $this->getUrl('post/blog/show');
+    }
+
     public function getAddUrl(){
         return $this->getUrl('post/post/add');
     }
 
+    public function getAddBlogUrl(){
+        return $this->getUrl('post/blog/add');
+    }
+
     public function getEditUrl(){
         return $this->getUrl('post/post/edit');
+    }
+
+    public function getEditBlogUrl(){
+        return $this->getUrl('post/blog/edit');
+    }
+
+    public function getDeleteUrl(){
+        return $this->getUrl('post/post/delete');
+    }
+
+    public function getBlogDeleteUrl(){
+        return $this->getUrl('post/blog/delete');
     }
 }

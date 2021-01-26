@@ -1,0 +1,44 @@
+<form class="" action="<?php echo $block->redirectBlogSave(); ?>" method="post" enctype='multipart/form-data'>
+    <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>">    
+    <div><a href="<?php echo $this->getBaseUrl()."post/blog/"; ?>"> Back</a></div><br>
+    <fieldset class="fieldset">
+        <legend class="legend"><span>Add Form</span></legend><br>
+        <div class="field title">
+            <label class="label" for="title"><span>Name</span></label>
+            <div class="control">
+                <input name="name" id="title" title="Name" value="" class="input-text" type="text" required>
+            </div>
+        </div>
+        <div class="field author">
+            <label class="label" for="author"><span>Url Key</span></label>
+            <div class="control">
+                <input name="url" id="author" title="Url Key"  class="input-text" type="text" required>
+            </div>
+        </div>
+        <div class="field author">
+            <label class="label" for="author"><span>Tags</span></label>
+            <div class="control">
+                <input name="tags" id="author" title="Tags"  class="input-text" type="text" required>
+            </div>
+        </div>
+        <div class="field content">
+            <label class="label" for="content"><span>Content</span></label>
+            <div class="control">
+                <textarea name="content" id="content" title="Content" class="input-text" cols="5" rows="3" required></textarea>
+            </div>
+        </div>
+        <div class="field image">
+            <label class="label" for="image"><span>Image</span></label>
+            <div class="control">
+                <input name="image" id="image" title="Image" value="" class="input-file" type="file" required>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="Submit" class="action submit primary">
+                    <span>Submit</span>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+</form>

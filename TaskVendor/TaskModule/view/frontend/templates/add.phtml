@@ -1,12 +1,12 @@
-<form class="" action="<?php echo $block->redirectSave(); ?>" method="post">
+<form class="" action="<?php echo $block->redirectSave(); ?>" method="post" enctype='multipart/form-data'>
     <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>">    
-    
+
     <fieldset class="fieldset">
         <legend class="legend"><span>Add Form</span></legend><br>
         <div class="field title">
             <label class="label" for="title"><span>Name</span></label>
             <div class="control">
-                <input name="name" id="title" title="Name"  class="input-text" type="text">
+                <input name="name" id="title" title="Name" value="" class="input-text" type="text">
             </div>
         </div>
         <div class="field author">
@@ -27,12 +27,19 @@
                 <textarea name="content" id="content" title="Content" class="input-text" cols="5" rows="3"></textarea>
             </div>
         </div>
-    </fieldset>
-    <div class="actions-toolbar">
-        <div class="primary">
-            <button type="submit" title="Submit" class="action submit primary">
-                <span>Submit</span>
-            </button>
+        <div class="field image">
+            <label class="label" for="image"><span>Image</span></label>
+            <div class="control">
+                <input name="image" id="image" title="Image" value="" class="input-file" type="file">
+            </div>
         </div>
-    </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="Submit" class="action submit primary">
+                    <span>Submit</span>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+
 </form>
